@@ -28,14 +28,17 @@ public class User {
     @NotBlank(message = "El nombre es obligatorio")
     private String name;
 
-    @Pattern(regexp="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", message="El formato del correo no es válido")
+    @Pattern(
+        regexp="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", 
+        message="El formato del correo no es válido"
+    )
     @NotBlank(message = "El correo es obligatorio")
     private String email;
 
     @NotBlank(message = "La contraseña es obligatoria")
     @Pattern(
-            regexp = "^(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$",
-            message = "La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un número"
+        regexp = "^(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$",
+        message = "La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un número"
     )
     private String password;
     private LocalDateTime created;
